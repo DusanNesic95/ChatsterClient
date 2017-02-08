@@ -1,0 +1,21 @@
+/* Empty. Add your own CSS if you like */
+.loginForm {
+	margin-top: 10%;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.btnLogin {
+	margin-left: 10%;
+	width: 80%;
+}
+.btnLoginDark {
+	margin-top: 10px;
+	margin-left: 10%;
+	width: 80%;
+}
+.loginLogo {
+	margin-top: 100px;
+	width: 50%;
+	margin-left: 25%;
+}
