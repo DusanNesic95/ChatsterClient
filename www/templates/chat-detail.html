@@ -1,8 +1,21 @@
-<ion-view view-title="{{chat.firstName}}">
+<ion-view view-title="{{user.firstName}} {{user.lastName}}">
   <ion-content class="padding">
-    <img ng-src="{{chat.face}}" style="width: 64px; height: 64px">
-    <p>
-      {{chat.lastText}}
-    </p>
+    <div class="item item-button-right">
+	  Pozovi {{user.firstName}} {{user.lastName}}
+	  <button class="button button-positive" ng-click="demoResponse()">
+		<i class="icon ion-ios-telephone"></i>
+	  </button>
+	</div>
+	<div class="messages" id="messages"></div>
+	<div class="list messageBar">
+	  <div class="item item-input-inset">
+	    <label class="item-input-wrapper">
+	      <input ng-model="messageContent.value" type="text" placeholder="Poruka">
+	    </label>
+	    <button class="button button-small" ng-click="sendMessage()">
+	      Pošalji
+	    </button>
+	  </div>
+	</div>
   </ion-content>
 </ion-view>

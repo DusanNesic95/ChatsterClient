@@ -14,6 +14,9 @@ angular.module('starter.services', []).factory('functions', ['$http', function($
 	functions.getcontactsfordomain = function(input) {
 		return $http.post(link + '/getcontactsfordomain', input);
 	}
+	functions.sendmessage = function(input) {
+		return $http.post(link + '/sendmessage', input);
+	}
 
 	return functions;
 }]);

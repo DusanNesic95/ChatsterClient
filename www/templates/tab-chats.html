@@ -1,7 +1,7 @@
 <ion-view view-title="Chats">
   <ion-content>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.userId}}">
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats | filter : search" type="item-text-wrap" ng-click="showDetails(chat)">
         <img ng-src="{{chat.photo}}">
         <h2>{{chat.firstName}}</h2>
         <p>{{chat.lastName}}</p>
@@ -12,5 +12,11 @@
         </ion-option-button>
       </ion-item>
     </ion-list>
+    <div class="list list-inset searchBar">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" ng-model="search" placeholder="Pretraga">
+      </label>
+    </div>
   </ion-content>
 </ion-view>

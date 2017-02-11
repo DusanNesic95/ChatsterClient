@@ -19,3 +19,40 @@
 	width: 50%;
 	margin-left: 25%;
 }
+.searchBar {
+	position: absolute;
+	bottom: 0;
+	width: 95%;
+	padding-bottom: 10px;
+}
+.messageBar {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+.messages {
+	border-top: 1px solid rgb(212,210,212);
+	border-bottom: 1px solid rgb(212,210,212);
+	height: 77%;
+	max-height: 77%;
+	overflow-y: auto;
+	margin-top: 10px;
+}
+.myMessage {
+	margin-top: 5px !important;
+	margin-bottom: 5px !important;
+	margin-right: 1px !important;
+	width: 70%;
+	float: right;
+}
+.myResponse {
+	margin-top: 5px !important;
+	margin-bottom: 5px !important;
+	margin-left: 1px !important;
+	width: 70%;
+	float: left;
+}
+.responseContent {
+	background-color: rgb(56,126,245);
+	color: white;
+}
