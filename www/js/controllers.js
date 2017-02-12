@@ -28,6 +28,36 @@ angular.module('starter.controllers', [])
   $scope.messageContent = {
     value: ''
   };
+  $scope.allMessages = [];
+
+  var myMessagesObject = {
+    from : JSON.parse(localStorage.getItem('user')),
+    to : JSON.parse(localStorage.getItem('contact'))
+  }
+  functions.getmessages(myMessagesObject)
+  .success(function(response) {
+    for (var i = 0; i < response.length; i++) {
+      console.log(response[i].fromUserId);
+      console.log(myMessagesObject.from);
+      if (response[i].fromUserId.username === myMessagesObject.from.username) {
+        console.log('moja' + response[i]);
+        $scope.message = '<div class="card myMessage"><div class="item item-text-wrap">' + response[i].content + '</div></div>'
+        var content = document.getElementById('messages');
+        messages.innerHTML = messages.innerHTML + $scope.message;
+        content.scrollTop = content.scrollHeight;
+      } else {
+        console.log('nije moja' + response[i]);
+        $scope.response = '<div class="card myResponse"><div class="item item-text-wrap responseContent">' + response[i].content + '</div></div>'
+        var content = document.getElementById('messages');
+        messages.innerHTML = messages.innerHTML + $scope.response;
+        $scope.messageContent.value = '';
+        content.scrollTop = content.scrollHeight;
+      }
+    }
+  })
+  .error(function(error) {
+    alert(error);
+  });
 
   $scope.sendMessage = function() {
     $scope.message = '<div class="card myMessage"><div class="item item-text-wrap">' + $scope.messageContent.value + '</div></div>'

@@ -17,6 +17,9 @@ angular.module('starter.services', []).factory('functions', ['$http', function($
 	functions.sendmessage = function(input) {
 		return $http.post(link + '/sendmessage', input);
 	}
+	functions.getmessages = function(input) {
+		return $http.post(link + '/getmessages', input);
+	}
 
 	return functions;
 }]);
